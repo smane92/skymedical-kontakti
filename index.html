@@ -4,35 +4,197 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SKYMEDICAL Kontakti</title>
+
+  <style>
+    :root{
+      --bg1:#0b1220;
+      --bg2:#0f1a33;
+      --card:#0f172a;
+      --stroke:rgba(255,255,255,.10);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.68);
+      --shadow: 0 18px 45px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 10%, rgba(82, 152, 255, .20), transparent 55%),
+        radial-gradient(1000px 700px at 80% 20%, rgba(0, 255, 209, .12), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px 16px;
+    }
+    .wrap{
+      width:100%;
+      max-width:520px;
+    }
+    .header{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:10px;
+      margin-bottom:16px;
+      text-align:center;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border:1px solid var(--stroke);
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      backdrop-filter: blur(8px);
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: linear-gradient(135deg, #2dd4bf, #60a5fa);
+      box-shadow: 0 0 0 4px rgba(96,165,250,.12);
+    }
+    h1{
+      font-size:30px;
+      letter-spacing:.6px;
+      margin:0;
+      line-height:1.1;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:14.5px;
+    }
+    .card{
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:14px;
+      backdrop-filter: blur(10px);
+    }
+    .list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:10px;
+    }
+    a.btn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 14px;
+      border-radius:14px;
+      text-decoration:none;
+      color:var(--text);
+      background: rgba(15, 23, 42, .55);
+      border:1px solid rgba(255,255,255,.10);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    a.btn:active{ transform: scale(.99); }
+    a.btn:hover{
+      background: rgba(15, 23, 42, .72);
+      border-color: rgba(255,255,255,.18);
+    }
+    .left{
+      display:flex; align-items:center; gap:12px;
+      min-width:0;
+    }
+    .icon{
+      width:38px; height:38px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, rgba(45,212,191,.20), rgba(96,165,250,.20));
+      border:1px solid rgba(255,255,255,.10);
+      flex:0 0 auto;
+    }
+    .name{
+      font-size:16px;
+      font-weight:650;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width:320px;
+    }
+    .hint{
+      font-size:12.5px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+    .arrow{
+      color:rgba(255,255,255,.70);
+      font-size:18px;
+      flex:0 0 auto;
+    }
+    .footer{
+      text-align:center;
+      margin-top:12px;
+      color:rgba(255,255,255,.55);
+      font-size:12px;
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial, sans-serif; text-align:center; background:#ffffff; padding:28px">
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="badge">
+        <span class="dot"></span>
+        <span style="color:rgba(255,255,255,.75); font-size:13px;">NFC kontakt kartice</span>
+      </div>
+      <h1>SKYMEDICAL</h1>
+      <p class="sub">Međunarodna logistika i transport</p>
+    </div>
 
-  <h2 style="margin:0;">SKYMEDICAL</h2>
-  <p style="margin:8px 0 22px 0;">Međunarodna logistika i transport</p>
+    <div class="card">
+      <div style="color:rgba(255,255,255,.78); font-size:13px; margin:2px 2px 10px;">
+        Izaberi kontakt za brzo čuvanje
+      </div>
 
-  <div style="max-width:520px; margin:0 auto; display:flex; flex-direction:column; gap:14px;">
+      <div class="list">
+        <a class="btn" href="https://drive.google.com/uc?export=download&id=1a_tWWmnAOpWY1VbQaeam4CFRWBtWJs1w">
+          <div class="left">
+            <div class="icon">💾</div>
+            <div>
+              <div class="name">Velibor Stanković</div>
+              <div class="hint">Sačuvaj kontakt</div>
+            </div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
 
-    <a href="https://drive.google.com/uc?export=download&id=1a_tWWmnAOpWY1VbQaeam4CFRWBtWJs1w"
-       style="display:block; padding:14px 16px; border:1px solid #ddd; border-radius:12px;
-              text-decoration:none; font-size:18px;">
-      💾 Sačuvaj kontakt – Velibor Stanković
-    </a>
+        <a class="btn" href="https://drive.google.com/uc?export=download&id=1SFZIPiHOT6pK_cJeXCu_qPpiRipo_P0z">
+          <div class="left">
+            <div class="icon">💾</div>
+            <div>
+              <div class="name">Vladimir Petrović</div>
+              <div class="hint">Sačuvaj kontakt</div>
+            </div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
 
-    <a href="https://drive.google.com/uc?export=download&id=1SFZIPiHOT6pK_cJeXCu_qPpiRipo_P0z"
-       style="display:block; padding:14px 16px; border:1px solid #ddd; border-radius:12px;
-              text-decoration:none; font-size:18px;">
-      💾 Sačuvaj kontakt – Vladimir Petrović
-    </a>
+        <a class="btn" href="https://drive.google.com/uc?export=download&id=1X4miq40UVF2hOJ4bAX6aQ8a-vyhI-9M3">
+          <div class="left">
+            <div class="icon">💾</div>
+            <div>
+              <div class="name">Đorđe Stanković</div>
+              <div class="hint">Sačuvaj kontakt</div>
+            </div>
+          </div>
+          <div class="arrow">›</div>
+        </a>
+      </div>
 
-    <a href="https://drive.google.com/uc?export=download&id=1X4miq40UVF2hOJ4bAX6aQ8a-vyhI-9M3"
-       style="display:block; padding:14px 16px; border:1px solid #ddd; border-radius:12px;
-              text-decoration:none; font-size:18px;">
-      💾 Sačuvaj kontakt – Đorđe Stanković
-    </a>
-
+      <div class="footer">
+        Tapni olovku → izaberi kontakt → sačuvaj.
+      </div>
+    </div>
   </div>
-
 </body>
 </html>
-
