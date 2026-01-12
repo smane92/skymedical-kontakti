@@ -1,0 +1,1 @@
+# skymedical-kontakti
