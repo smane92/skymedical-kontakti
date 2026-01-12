@@ -9,14 +9,22 @@
     :root{
       --bg1:#0b1220;
       --bg2:#0f1a33;
-      --card:rgba(255,255,255,.06);
-      --stroke:rgba(255,255,255,.12);
-      --text:rgba(255,255,255,.94);
-      --muted:rgba(255,255,255,.65);
+
+      --card: rgba(255,255,255,.06);
+      --stroke: rgba(255,255,255,.12);
+      --stroke2: rgba(255,255,255,.16);
+
+      --text: rgba(255,255,255,.94);
+      --muted: rgba(255,255,255,.66);
+
       --shadow: 0 18px 45px rgba(0,0,0,.35);
-      --radius:18px;
+      --shadow2: 0 10px 26px rgba(0,0,0,.28);
+
+      --radius: 20px;
     }
-    *{box-sizing:border-box}
+
+    *{ box-sizing:border-box; }
+
     body{
       margin:0;
       min-height:100vh;
@@ -31,36 +39,49 @@
       justify-content:center;
       padding:28px 16px;
     }
+
     .wrap{
       width:100%;
-      max-width:520px;
+      max-width:540px;
     }
+
     .header{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      gap:12px;
-      margin-bottom:18px;
       text-align:center;
+      margin-bottom:16px;
     }
-    .logo{
-      width:150px;
-      max-width:85%;
-      height:auto;
-      filter: drop-shadow(0 8px 24px rgba(0,0,0,.45));
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow2);
+      margin-bottom:12px;
     }
+
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: linear-gradient(135deg, #2dd4bf, #60a5fa);
+      box-shadow: 0 0 0 4px rgba(96,165,250,.12);
+    }
+
     h1{
-      font-size:30px;
+      margin:0;
+      font-size:32px;
       letter-spacing:.6px;
-      margin:6px 0 0 0;
       line-height:1.1;
     }
+
     .sub{
-      margin:0;
+      margin:8px 0 0 0;
       color:var(--muted);
       font-size:14.5px;
     }
+
     .card{
       background: var(--card);
       border:1px solid var(--stroke);
@@ -69,80 +90,110 @@
       padding:14px;
       backdrop-filter: blur(10px);
     }
+
     .title{
-      color:rgba(255,255,255,.75);
+      color:rgba(255,255,255,.74);
       font-size:13px;
-      margin:4px 2px 10px;
+      margin:6px 4px 12px;
       text-align:center;
     }
+
     .list{
       display:flex;
       flex-direction:column;
       gap:10px;
-      margin-top:6px;
     }
+
     a.btn{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
       padding:14px 14px;
-      border-radius:14px;
+      border-radius:16px;
       text-decoration:none;
       color:var(--text);
-      background: rgba(15, 23, 42, .55);
-      border:1px solid rgba(255,255,255,.14);
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      background: rgba(15, 23, 42, .58);
+      border:1px solid rgba(255,255,255,.12);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease;
     }
-    a.btn:active{ transform: scale(.99); }
+
     a.btn:hover{
       background: rgba(15, 23, 42, .72);
-      border-color: rgba(255,255,255,.22);
+      border-color: rgba(255,255,255,.20);
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
     }
+
+    a.btn:active{
+      transform: scale(.992);
+    }
+
     .left{
-      display:flex; align-items:center; gap:12px;
+      display:flex;
+      align-items:center;
+      gap:12px;
       min-width:0;
     }
+
     .icon{
-      width:40px; height:40px; border-radius:12px;
-      display:flex; align-items:center; justify-content:center;
-      background: linear-gradient(135deg, rgba(45,212,191,.25), rgba(96,165,250,.25));
-      border:1px solid rgba(255,255,255,.14);
+      width:42px; height:42px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg, rgba(45,212,191,.24), rgba(96,165,250,.24));
+      border:1px solid rgba(255,255,255,.12);
       flex:0 0 auto;
       font-size:18px;
     }
+
     .name{
-      font-size:16px;
-      font-weight:650;
+      font-size:16.5px;
+      font-weight:700;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
-      max-width:320px;
+      max-width:340px;
     }
+
     .hint{
       font-size:12.5px;
       color:var(--muted);
       margin-top:2px;
     }
+
     .arrow{
-      color:rgba(255,255,255,.70);
+      color:rgba(255,255,255,.72);
       font-size:20px;
       flex:0 0 auto;
+      padding:0 4px;
     }
+
     .footer{
       text-align:center;
       margin-top:12px;
-      color:rgba(255,255,255,.55);
+      color:rgba(255,255,255,.52);
       font-size:12px;
+    }
+
+    .footer span{
+      display:inline-block;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-
     <div class="header">
-      <img src="logo.png" alt="SKYMEDICAL logo" class="logo" />
+      <div class="badge">
+        <span class="dot"></span>
+        <span style="color:rgba(255,255,255,.76); font-size:13px;">NFC kontakti</span>
+      </div>
+
       <h1>SKYMEDICAL</h1>
       <p class="sub">Međunarodna logistika i transport</p>
     </div>
@@ -186,10 +237,9 @@
       </div>
 
       <div class="footer">
-        Tapni olovku → izaberi kontakt → sačuvaj
+        <span>Tapni olovku → izaberi kontakt → sačuvaj</span>
       </div>
     </div>
-
   </div>
 </body>
 </html>
